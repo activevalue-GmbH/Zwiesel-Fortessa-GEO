@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Zwiesel Fortessa | active value</title>
+  <meta
+    name="description"
+    content="GEO-Unterlage fuer Zwiesel Fortessa im active-value-Layout mit strategischer Einordnung, Analyse, Roadmap und naechsten Schritten."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #8dc63f;
+      --green-dark: #648f1b;
+      --green-light: #f0f7e6;
+      --green-soft: #dff0bc;
+      --forest: #243217;
+      --ink: #1b1f19;
+      --text: #394036;
+      --muted: #697163;
+      --line: #d8ddd1;
+      --surface: #ffffff;
+      --surface-alt: #f7f8f4;
+      --warm: #c96f1d;
+      --warm-light: #fff6ec;
+      --danger: #b63c2f;
+      --danger-light: #fcebe7;
+      --shadow: 0 18px 40px rgba(19, 29, 12, 0.08);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Barlow", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #f7f8f4;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(251, 252, 248, 0.88);
+      border-bottom: 1px solid rgba(216, 221, 209, 0.7);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+    }
+
+    .brand strong {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--forest);
+      background: rgba(141, 198, 63, 0.14);
+      border: 1px solid rgba(141, 198, 63, 0.35);
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+      gap: 28px;
+      padding: 36px;
+      background: #ffffff;
+      border: 1px solid rgba(216, 221, 209, 0.88);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-copy h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.06;
+      color: var(--ink);
+      margin: 10px 0 16px;
+      max-width: 12ch;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+
+    .hero-copy p {
+      max-width: 62ch;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 12px 24px rgba(100, 143, 27, 0.25);
+    }
+
+    .button-secondary {
+      color: var(--forest);
+      background: #fff;
+      border: 1px solid rgba(100, 113, 99, 0.22);
+    }
+
+    .hero-panel {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .hero-note,
+    .hero-stats {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .hero-note h2,
+    .hero-stats h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .hero-note p {
+      font-size: 15px;
+    }
+
+    .stat-list,
+    .premises,
+    .simulation-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stat {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .stat-value {
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .section-nav {
+      padding: 14px 0 6px;
+    }
+
+    .section-nav ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .section-nav a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid rgba(216, 221, 209, 0.85);
+      color: var(--ink);
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(27, 31, 25, 0.04);
+    }
+
+    main {
+      padding: 22px 0 72px;
+    }
+
+    .section {
+      margin-top: 34px;
+      background: #ffffff;
+      border: 1px solid rgba(216, 221, 209, 0.88);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: 34px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker span {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--green);
+    }
+
+    .section-head h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.1;
+      color: var(--ink);
+      max-width: 16ch;
+    }
+
+    .section-head p {
+      max-width: 56ch;
+      color: var(--muted);
+    }
+
+    .insight {
+      margin-bottom: 28px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      background: var(--green-light);
+    }
+
+    .insight strong {
+      color: var(--forest);
+    }
+
+    .grid-2,
+    .grid-3,
+    .score-grid,
+    .topic-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3,
+    .topic-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .score-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 22px;
+    }
+
+    .card,
+    .score-box,
+    .sim-box,
+    .topic-card,
+    .phase {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .card h3,
+    .phase h3,
+    .topic-card h4,
+    .sim-q {
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+    }
+
+    .card p,
+    .topic-card p,
+    .phase li,
+    .sim-before,
+    .sim-after,
+    .decision-note,
+    .small {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .label,
+    .topic-cat,
+    .phase-meta {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .score-box {
+      text-align: center;
+      background: #fff;
+    }
+
+    .score-val {
+      font-family: "Poppins", sans-serif;
+      font-size: 30px;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .score-val.danger {
+      color: var(--danger);
+    }
+
+    .score-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .status-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .status-icon,
+    .bullet {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    .status-card.warn,
+    .premise.warn {
+      background: var(--warm-light);
+      border-color: rgba(201, 111, 29, 0.18);
+    }
+
+    .status-card.warn .status-icon,
+    .bullet.arrow,
+    .tag.warn {
+      background: var(--warm);
+    }
+
+    .status-card.crit {
+      background: var(--danger-light);
+      border-color: rgba(182, 60, 47, 0.18);
+    }
+
+    .status-card.crit .status-icon,
+    .tag.bad,
+    .score-pill.bad {
+      background: var(--danger);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--forest);
+      padding: 14px 16px;
+    }
+
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: rgba(247, 248, 244, 0.88);
+    }
+
+    tbody tr.warn td {
+      background: var(--warm-light);
+      color: #99541a;
+    }
+
+    tbody tr.highlight td {
+      background: var(--green-light);
+    }
+
+    .score-pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .score-pill.good,
+    .tag.ok {
+      background: var(--green);
+    }
+
+    .score-pill.mid {
+      background: var(--warm);
+    }
+
+    .premise {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: var(--green);
+    }
+
+    .premise.warn .dot {
+      background: var(--warm);
+    }
+
+    .phase {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .phase-num {
+      font-family: "Poppins", sans-serif;
+      font-size: 28px;
+      color: var(--green-dark);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .phase ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .phase li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .phase li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--green-dark);
+    }
+
+    .topic-card {
+      background: #fff;
+    }
+
+    .topic-cat {
+      color: var(--green-dark);
+    }
+
+    .sim-box {
+      background: #fff;
+    }
+
+    .sim-q {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .sim-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .sim-before,
+    .sim-after {
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .sim-before {
+      background: var(--danger-light);
+      border-color: rgba(182, 60, 47, 0.18);
+      color: #7e332a;
+    }
+
+    .sim-after {
+      background: var(--green-light);
+      border-color: rgba(100, 143, 27, 0.18);
+      color: var(--forest);
+    }
+
+    .sim-before strong,
+    .sim-after strong {
+      display: block;
+      font-family: "Poppins", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .sim-before strong {
+      color: var(--danger);
+    }
+
+    .sim-after strong {
+      color: var(--green-dark);
+    }
+
+    .footer {
+      padding: 0 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .hero-card,
+      .grid-2,
+      .grid-3,
+      .topic-grid,
+      .score-grid,
+      .section-nav ul,
+      .sim-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+      }
+
+      .section-head h2 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-row,
+      .footer-bar {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .meta {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .hero-card,
+      .section-inner {
+        padding: 22px;
+      }
+
+      .hero-copy p {
+        font-size: 17px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      thead th,
+      tbody td {
+        min-width: 180px;
+      }
+    }
+
+    @media print {
+      .site-header,
+      .hero-actions,
+      .section-nav {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+        font-size: 12px;
+      }
+
+      .section,
+      .hero-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="brand">
+        <span class="eyebrow">GEO · Zwiesel Fortessa</span>
+        <strong>KI-Sichtbarkeit als Wettbewerbsvorteil</strong>
+      </div>
+      <div class="meta">
+        <span class="badge">Meeting 22. April 2026</span>
+        <span class="badge">April 2026 · Vertraulich</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <div class="eyebrow">Vorbereitet von active value GmbH</div>
+          <h1>GEO-Readiness im active-value-Format</h1>
+          <p>
+            Auf Basis der GEO-Analyse fuer zwiesel-glas.com ordnet diese Unterlage die
+            strategische Relevanz ein, macht die Sichtbarkeitsluecken sichtbar und
+            uebersetzt sie in eine konkrete Umsetzungsroadmap.
+          </p>
+          <div class="hero-actions">
+            <button class="button button-primary" onclick="window.print()">Als PDF speichern</button>
+            <a class="button button-secondary" href="#naechste-schritte">Zu den naechsten Schritten</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <article class="hero-note">
+            <h2>Strategische Relevanz</h2>
+            <p>
+              KI-Antwortmaschinen werden fuer Recherche, Vergleich und Kaufentscheidung zu
+              neuen Gatekeepern. Wer dort nicht strukturiert lesbar ist, verliert digitale
+              Praesenz trotz starker Marktposition.
+            </p>
+          </article>
+          <article class="hero-stats">
+            <h2>Analyse auf einen Blick</h2>
+            <div class="stat-list">
+              <div class="stat">
+                <div class="stat-value">44</div>
+                <div>GEO-Gesamtscore fuer zwiesel-glas.com</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">3</div>
+                <div>strukturelle Kernprobleme mit hohem Hebel</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">6</div>
+                <div>Monate bis zu einer deutlich staerkeren KI-Sichtbarkeit</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="section-nav" aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#relevanz">1. Warum jetzt</a></li>
+        <li><a href="#analyse">2. Erkenntnisse</a></li>
+        <li><a href="#massnahmen">3. Roadmap</a></li>
+        <li><a href="#naechste-schritte">4. Naechste Schritte</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="section" id="relevanz">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>1</span> Warum jetzt</div>
+              <h2>GEO wird zum neuen Sichtbarkeitshebel</h2>
+            </div>
+            <p>
+              Die Grundlage stammt aus der Analyse von findaible.de vom Maerz 2026 und
+              zeigt, warum KI-Systeme heute mitentscheiden, welche Marken in Beratung
+              und Kaufentscheidung ueberhaupt noch auftauchen.
+            </p>
+          </div>
+
+          <div class="insight">
+            <strong>Die entscheidende Verschiebung:</strong> Zwischen Marke und Zielgruppe
+            schalten sich KI-Systeme als Filter und Interpreten. Wer in diesen Antworten
+            nicht auftaucht, verliert Reichweite, obwohl Marktposition und Produktqualitaet
+            unveraendert stark sind.
+          </div>
+
+          <div class="grid-2">
+            <article class="card">
+              <h3>Generative Antwortmaschinen</h3>
+              <p>ChatGPT, Gemini, Perplexity, Google AI Overviews und Copilot werden immer oefter zur Endstation der Informationsreise statt zur Weiterleitung auf klassische Trefferlisten.</p>
+            </article>
+            <article class="card">
+              <h3>Relevanz fuer Premiummarken</h3>
+              <p>Gerade bei beratungsintensiven Kategorien wie Glas und Tischkultur starten Entscheidungen haeufig mit einer KI-Frage zu Weinglaesern, Marken oder Nachhaltigkeit.</p>
+            </article>
+            <article class="card">
+              <h3>KI braucht Struktur</h3>
+              <p>Qualitativ starke Inhalte reichen allein nicht mehr. KI-Systeme priorisieren maschinenlesbare Produktdaten, klare Markenlogik und zitierbare Fakten.</p>
+            </article>
+            <article class="card">
+              <h3>GEO erweitert SEO</h3>
+              <p>GEO baut auf SEO auf, ergaenzt aber strukturierte Daten, E-E-A-T-Signale und Quellen, die von Antwortmaschinen direkt verarbeitet und referenziert werden koennen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="analyse">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>2</span> Erkenntnisse</div>
+              <h2>Starkes Fundament, klare GEO-Luecke</h2>
+            </div>
+            <p>
+              Zwiesel Glas bringt Marktstaerke, Produktqualitaet und belastbare
+              Alleinstellungsmerkmale mit, verliert aber in KI-Antworten gegen
+              Wettbewerber mit besser lesbarer Datenstruktur.
+            </p>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-box">
+              <div class="score-val danger">44</div>
+              <div class="score-label">GEO gesamt</div>
+            </div>
+            <div class="score-box">
+              <div class="score-val">35</div>
+              <div class="score-label">Technisch</div>
+            </div>
+            <div class="score-box">
+              <div class="score-val">52</div>
+              <div class="score-label">Inhaltlich</div>
+            </div>
+            <div class="score-box">
+              <div class="score-val">45</div>
+              <div class="score-label">Reichweite</div>
+            </div>
+          </div>
+
+          <div class="insight">
+            <strong>Das Paradox:</strong> Zwiesel Glas ist zehnfacher Weltmarktfuehrer,
+            besitzt das Tritan-Patent, hat renommierte Auszeichnungen und starke
+            Sternekoch-Bezuege. Trotzdem ist die Marke in KI-generierten Kaufberatungen
+            schwaecher sichtbar als mehrere Wettbewerber, weil diese strukturell
+            leichter lesbar sind.
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="GEO-Score im Wettbewerbsvergleich">
+              <thead>
+                <tr>
+                  <th>Unternehmen</th>
+                  <th>Domain</th>
+                  <th>Product-Schema</th>
+                  <th>Bewertungen</th>
+                  <th>GEO-Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Riedel</td>
+                  <td>riedel.com</td>
+                  <td>Vorhanden</td>
+                  <td>Stark</td>
+                  <td><span class="score-pill good">72 / 100</span></td>
+                </tr>
+                <tr>
+                  <td>Spiegelau</td>
+                  <td>spiegelau.com</td>
+                  <td>Vorhanden</td>
+                  <td>Gut</td>
+                  <td><span class="score-pill good">65 / 100</span></td>
+                </tr>
+                <tr>
+                  <td>Nachtmann</td>
+                  <td>nachtmann.com</td>
+                  <td>Teilweise</td>
+                  <td>Gut</td>
+                  <td><span class="score-pill mid">60 / 100</span></td>
+                </tr>
+                <tr>
+                  <td>Stoelzle Lausitz</td>
+                  <td>stoelzle.com</td>
+                  <td>Teilweise</td>
+                  <td>Mittel</td>
+                  <td><span class="score-pill mid">58 / 100</span></td>
+                </tr>
+                <tr>
+                  <td>Schott Zwiesel</td>
+                  <td>schott-zwiesel.com</td>
+                  <td>Vorhanden</td>
+                  <td>Gut</td>
+                  <td><span class="score-pill mid">55 / 100</span></td>
+                </tr>
+                <tr class="highlight">
+                  <td>Zwiesel Glas</td>
+                  <td>zwiesel-glas.com</td>
+                  <td>Fehlt</td>
+                  <td>Wenig</td>
+                  <td><span class="score-pill bad">44 / 100</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-3" style="margin-top: 24px;">
+            <article class="card status-card crit">
+              <div class="status-icon">!</div>
+              <div>
+                <div class="label">Kernproblem 1</div>
+                <div class="value">Kein Product-Schema und kein AggregateRating</div>
+                <p>Produkte sind fuer KI nicht sauber mit Eigenschaften, Preisen und Bewertungen auslesbar, waehrend Wettbewerber genau dort bereits Signale liefern.</p>
+              </div>
+            </article>
+            <article class="card status-card crit">
+              <div class="status-icon">!</div>
+              <div>
+                <div class="label">Kernproblem 2</div>
+                <div class="value">Tritan, Weltmarktfuehrerschaft und Awards sind nicht maschinenlesbar</div>
+                <p>Die staerksten Beweise fuer Expertise und Differenzierung sind auf der Website vorhanden, aber nicht in einer Form, die KI-Systeme direkt verwerten koennen.</p>
+              </div>
+            </article>
+            <article class="card status-card crit">
+              <div class="status-icon">!</div>
+              <div>
+                <div class="label">Kernproblem 3</div>
+                <div class="value">Die Zwei-Marken-Architektur ist fuer KI unscharf</div>
+                <p>Zwiesel Glas und Schott Zwiesel teilen eine Domain, ohne im Schema klar getrennt zu sein. Das fuehrt zu Vermischung von Segmenten, Markenbildern und Empfehlungen.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="simulation-list" style="margin-top: 28px;">
+            <div class="sim-box">
+              <p class="sim-q">Welches ist das beste Weinglas fuer Bordeaux-Rotwein?</p>
+              <div class="sim-row">
+                <div class="sim-before">
+                  <strong>Heute</strong>
+                  KI nennt zuerst Riedel oder Spiegelau, weil ein klares Weintyp-Matching und strukturierte Produktdaten leichter gefunden werden.
+                </div>
+                <div class="sim-after">
+                  <strong>Nach GEO</strong>
+                  Zwiesel Glas Journey Bordeaux wird mit Material, Herkunft, Einsatzzweck und Expertenkontext als konkrete Empfehlung lesbar.
+                </div>
+              </div>
+            </div>
+            <div class="sim-box">
+              <p class="sim-q">Welcher Glashersteller produziert am nachhaltigsten?</p>
+              <div class="sim-row">
+                <div class="sim-before">
+                  <strong>Heute</strong>
+                  Nachhaltigkeitssignale von Zwiesel sind zwar vorhanden, werden aber nicht konsistent als vertrauenswuerdige maschinenlesbare Belege verarbeitet.
+                </div>
+                <div class="sim-after">
+                  <strong>Nach GEO</strong>
+                  ISO 14001, Oxyfuel-Technologie, Recyclinganteil und Awards werden strukturiert hinterlegt und tauchen dadurch direkt in KI-Antworten auf.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="massnahmen">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>3</span> Roadmap</div>
+              <h2>In drei Phasen zu belastbarer KI-Sichtbarkeit</h2>
+            </div>
+            <p>
+              Die vorgeschlagene Roadmap hebt Technik, Inhalte und Autoritaet
+              parallel an und soll den Score innerhalb von rund sechs Monaten
+              in Richtung 80 Punkte entwickeln.
+            </p>
+          </div>
+
+          <div class="premises">
+            <div class="premise">
+              <div class="dot"></div>
+              <div>Ausgangspunkt: GEO-Score von <strong>44 / 100</strong> mit sichtbarer Wettbewerbsdifferenz.</div>
+            </div>
+            <div class="premise">
+              <div class="dot"></div>
+              <div>Zielbild: Nach Phase 1 und 2 etwa <strong>70 / 100</strong>, nach Phase 3 rund <strong>80 / 100</strong>.</div>
+            </div>
+            <div class="premise">
+              <div class="dot"></div>
+              <div>Hebel: strukturierte Produktdaten, E-E-A-T-Inhalte und ein sauber getrenntes Markenmodell.</div>
+            </div>
+          </div>
+
+          <article class="phase">
+            <div class="phase-num">01</div>
+            <div>
+              <div class="phase-meta">Sofort · Woche 1 bis 4</div>
+              <h3>Technische Grundlage fuer KI schaffen</h3>
+              <ul>
+                <li>Product-Schema fuer Produktseiten mit Name, Material, Marke, Preis und Verfuegbarkeit.</li>
+                <li>AggregateRating-Schema fuer sichtbare Bewertungs- und Vertrauenssignale.</li>
+                <li>Organization-Schema fuer Weltmarktfuehrerschaft, Tritan-Patent und Unternehmensfakten.</li>
+                <li>Klare Schema-Trennung zwischen Zwiesel Glas und Schott Zwiesel.</li>
+                <li>Breadcrumbs und Metadaten mit staerkeren USP-Signalen.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-num">02</div>
+            <div>
+              <div class="phase-meta">Kurzfristig · Monat 1 bis 3</div>
+              <h3>Expertise und Differenzierung in Inhalte uebersetzen</h3>
+              <ul>
+                <li>Tritan-Wissensseite mit Patentgeschichte, FAQ und TechArticle-Logik ausbauen.</li>
+                <li>Weinratgeber mit konkreten Produktempfehlungen und FAQPage-Schema entwickeln.</li>
+                <li>Vergleichsseite fuer Zwiesel Glas versus Schott Zwiesel als KI-Orientierungshilfe anlegen.</li>
+                <li>Sternekoch-Endorsements und Nachhaltigkeitsbelege strukturiert hinterlegen.</li>
+                <li>ClaimReview-nahe Nachhaltigkeitssignale mit Awards, ISO und Technologieprofil staerken.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="phase" style="margin-bottom: 0;">
+            <div class="phase-num">03</div>
+            <div>
+              <div class="phase-meta">Mittelfristig · Monat 3 bis 6</div>
+              <h3>Autoritaet und Monitoring verstetigen</h3>
+              <ul>
+                <li>Regelmaessige GEO-relevante Ratgeberinhalte aufbauen.</li>
+                <li>Testimonials, internationale Versionen und weitere strukturierte Entitaeten ausrollen.</li>
+                <li>Monatliches KI-Monitoring fuer zentrale Beratungsfragen aufsetzen.</li>
+                <li>Fachhaendler- und Netzwerkseiten als strukturiertes Datennetz erweitern.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="naechste-schritte">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>4</span> Naechste Schritte</div>
+              <h2>Von der Unterlage zur konkreten Umsetzung</h2>
+            </div>
+            <p>
+              Christians Landingpage-Ideen passen bereits sehr gut zur GEO-Logik.
+              Jetzt geht es darum, Reihenfolge, Ownership und Startpaket klar zu
+              setzen, damit aus der Strategie eine umsetzbare Arbeitsfolge wird.
+            </p>
+          </div>
+
+          <div class="topic-grid">
+            <article class="topic-card">
+              <div class="topic-cat">Weinglaeser</div>
+              <h4>Welches Weinglas fuer welchen Wein?</h4>
+              <p>Hoher Hebel fuer FAQPage-Struktur, Produktzuordnung und direkte KI-Antwortfaehigkeit.</p>
+            </article>
+            <article class="topic-card">
+              <div class="topic-cat">Weinglaeser</div>
+              <h4>Universalglas oder Spezialglas?</h4>
+              <p>Vergleichsformate helfen Antwortmaschinen bei klaren Einordnungen und Empfehlungen.</p>
+            </article>
+            <article class="topic-card">
+              <div class="topic-cat">Weinglaeser</div>
+              <h4>Was macht ein gutes Weinglas aus?</h4>
+              <p>Ideal fuer fachliche Signale rund um Material, Form, Gewicht und Qualitaetskriterien.</p>
+            </article>
+            <article class="topic-card">
+              <div class="topic-cat">Sektglaeser</div>
+              <h4>Aroma im Sektglas</h4>
+              <p>Ein Thema mit echter Sachexpertise, das Zwiesel glaubwuerdig und differenzierend besetzen kann.</p>
+            </article>
+            <article class="topic-card">
+              <div class="topic-cat">Nachhaltigkeit</div>
+              <h4>Nachhaltig feiern</h4>
+              <p>Verbindet ISO, Oxyfuel und Recycling zu einem starken Vertrauens- und Relevanzsignal.</p>
+            </article>
+            <article class="topic-card">
+              <div class="topic-cat">Serienlogik</div>
+              <h4>Die perfekte Glas-Serie fuer zuhause</h4>
+              <p>Hilft bei Produktorientierung, Markenlogik und KI-kompatiblen Serienzusammenhaengen.</p>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="Offene Entscheidungen und naechste Schritte">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Aufgabe</th>
+                  <th>Wer / Wann</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    Vorgehen klaeren: active value allein oder mit GEO-Spezialist.
+                    <div class="decision-note">Optional kann findaible.de fuer Schema-Audit und Monitoring ergaenzend eingebunden werden.</div>
+                  </td>
+                  <td><span class="tag warn">ZF + AV · 22. April</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    Priorisierung der Landingpage-Themen festlegen.
+                    <div class="decision-note">Empfehlung: Weinratgeber, Tritan-Wissensseite und Nachhaltigkeitsseite zuerst umsetzen.</div>
+                  </td>
+                  <td><span class="tag warn">ZF + AV · 22. April</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    Interne Ownership fuer Schema-Implementierung, Content-Freigabe und Monitoring klaeren.
+                  </td>
+                  <td><span class="tag warn">ZF · Mai 2026</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    GEO-Kickoff mit Product-Schema-Audit fuer die Top-50-Produkte starten.
+                    <div class="decision-note">Das ist der erste messbare Schritt mit dem groessten direkten Hebel.</div>
+                  </td>
+                  <td><span class="tag ok">AV · Woche 1</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bar">
+        <span>active value GmbH · Duesseldorf · April 2026</span>
+        <span>GEO Zwiesel Fortessa · Vertraulich</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

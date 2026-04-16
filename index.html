@@ -52,9 +52,92 @@
       background: #f7f8f4;
     }
 
+    body.auth-locked {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .password-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(247, 248, 244, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .password-gate.hidden {
+      display: none;
+    }
+
+    .password-card {
+      width: min(100%, 420px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .password-kicker {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .password-card h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 28px;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .password-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .password-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .password-input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--ink);
+      background: var(--surface-alt);
+    }
+
+    .password-button {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font: inherit;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      cursor: pointer;
+    }
+
+    .password-error {
+      min-height: 20px;
+      font-size: 14px;
+      color: var(--danger);
     }
 
     .shell {
@@ -746,7 +829,19 @@
     }
   </style>
 </head>
-<body>
+<body class="auth-locked">
+  <div class="password-gate" id="password-gate">
+    <div class="password-card">
+      <div class="password-kicker">Zwiesel Fortessa · GEO</div>
+      <h1>Passwortgeschützter Zugang</h1>
+      <p>Bitte Passwort eingeben, um die GEO-Unterlage zu öffnen.</p>
+      <form class="password-form" id="password-form">
+        <input class="password-input" id="password-input" type="password" placeholder="Passwort" autocomplete="current-password">
+        <button class="password-button" type="submit">Unterlage öffnen</button>
+        <div class="password-error" id="password-error" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
   <header class="site-header">
     <div class="shell header-row">
       <div class="brand">
@@ -1190,5 +1285,40 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      const STORAGE_KEY = "av-zwiesel-fortessa-geo-auth";
+      const PASSWORD = "activevalue21.04.26-GEO";
+      const body = document.body;
+      const gate = document.getElementById("password-gate");
+      const form = document.getElementById("password-form");
+      const input = document.getElementById("password-input");
+      const error = document.getElementById("password-error");
+
+      function unlock() {
+        sessionStorage.setItem(STORAGE_KEY, "ok");
+        gate.classList.add("hidden");
+        body.classList.remove("auth-locked");
+      }
+
+      if (sessionStorage.getItem(STORAGE_KEY) === "ok") {
+        unlock();
+        return;
+      }
+
+      input.focus();
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (input.value === PASSWORD) {
+          error.textContent = "";
+          unlock();
+          return;
+        }
+        error.textContent = "Passwort stimmt nicht.";
+        input.select();
+      });
+    })();
+  </script>
 </body>
 </html>

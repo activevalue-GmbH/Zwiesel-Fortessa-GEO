@@ -235,6 +235,10 @@
       text-wrap: balance;
     }
 
+    .hero-copy h1 .keep-line {
+      white-space: nowrap;
+    }
+
     .hero-copy p {
       max-width: 62ch;
       color: var(--text);
@@ -773,6 +777,10 @@
       .section-head h2 {
         max-width: none;
       }
+
+      .hero-copy h1 {
+        font-size: clamp(32px, 6vw, 48px);
+      }
     }
 
     @media (max-width: 760px) {
@@ -859,7 +867,7 @@
       <div class="hero-card">
         <div class="hero-copy">
           <div class="eyebrow">Vorbereitet von active value GmbH</div>
-          <h1>KI-Sichtbarkeit als <span style="white-space: nowrap;">Wettbewerbs</span><br>vorteil</h1>
+          <h1><span class="keep-line">KI-Sichtbarkeit</span><br>als <span class="keep-line">Wettbewerbs-</span><br>vorteil</h1>
           <p>
             Auf Basis der GEO-Analyse für zwiesel-glas.com ordnet diese Unterlage die
             strategische Relevanz ein, macht die Sichtbarkeitslücken sichtbar und

@@ -6,7 +6,7 @@
   <title>GEO Zwiesel Fortessa | active value</title>
   <meta
     name="description"
-    content="GEO-Unterlage für Zwiesel Fortessa im active-value-Layout mit strategischer Einordnung, Analyse, Roadmap und nächsten Schritten."
+    content="GEO-Unterlage für Zwiesel Fortessa im active-value-Layout mit strategischer Einordnung, Analyse, Roadmap und einem neuen, vereinfachten Opener."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,8 +203,151 @@
       border: 1px solid rgba(141, 198, 63, 0.35);
     }
 
+    .opener {
+      padding: 30px 0 12px;
+    }
+
+    .opener-card {
+      display: grid;
+      gap: 24px;
+      padding: 32px 34px;
+      background: linear-gradient(135deg, rgba(141, 198, 63, 0.1), rgba(255, 255, 255, 0) 38%), #ffffff;
+      border: 1px solid rgba(216, 221, 209, 0.88);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .opener-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.9fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .opener-copy h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.06;
+      color: var(--ink);
+      margin: 10px 0 16px;
+      max-width: 11ch;
+      text-wrap: balance;
+    }
+
+    .opener-copy p {
+      max-width: 60ch;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .opener-hook {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: var(--green-light);
+      border: 1px solid rgba(141, 198, 63, 0.28);
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    .opener-mini {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .opener-mini h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .opener-mini p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .opener-grid,
+    .opener-statements,
+    .opener-sources,
+    .grid-2,
+    .grid-3,
+    .score-grid,
+    .topic-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .opener-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .opener-statements {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .opener-sources {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .opener-stat,
+    .opener-note,
+    .opener-source {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 20px;
+    }
+
+    .opener-stat-value {
+      font-family: "Poppins", sans-serif;
+      font-size: 42px;
+      line-height: 1;
+      color: var(--ink);
+      margin: 10px 0 10px;
+    }
+
+    .opener-stat h3,
+    .opener-note h3,
+    .opener-source h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .opener-note.good {
+      background: var(--green-light);
+      border-color: rgba(141, 198, 63, 0.3);
+    }
+
+    .opener-note.warn {
+      background: var(--warm-light);
+      border-color: rgba(201, 111, 29, 0.2);
+    }
+
+    .opener-note.bad {
+      background: var(--danger-light);
+      border-color: rgba(182, 60, 47, 0.18);
+    }
+
+    .opener-source ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .opener-source a {
+      color: var(--forest);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
     .hero {
-      padding: 56px 0 28px;
+      padding: 24px 0 28px;
     }
 
     .hero-card {
@@ -425,14 +568,6 @@
       color: var(--forest);
     }
 
-    .grid-2,
-    .grid-3,
-    .score-grid,
-    .topic-grid {
-      display: grid;
-      gap: 18px;
-    }
-
     .grid-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -472,7 +607,11 @@
     .sim-before,
     .sim-after,
     .decision-note,
-    .small {
+    .small,
+    .opener-card p,
+    .opener-stat p,
+    .opener-note p,
+    .opener-source li {
       font-size: 14.5px;
       color: var(--muted);
       line-height: 1.65;
@@ -760,6 +899,10 @@
     }
 
     @media (max-width: 980px) {
+      .opener-head,
+      .opener-grid,
+      .opener-statements,
+      .opener-sources,
       .hero-card,
       .grid-2,
       .grid-3,
@@ -778,7 +921,8 @@
         max-width: none;
       }
 
-      .hero-copy h1 {
+      .hero-copy h1,
+      .opener-copy h1 {
         font-size: clamp(32px, 6vw, 48px);
       }
     }
@@ -794,16 +938,22 @@
         justify-content: flex-start;
       }
 
-      .hero {
-        padding-top: 28px;
+      .opener {
+        padding-top: 18px;
       }
 
+      .hero {
+        padding-top: 18px;
+      }
+
+      .opener-card,
       .hero-card,
       .section-inner {
         padding: 22px;
       }
 
-      .hero-copy p {
+      .hero-copy p,
+      .opener-copy p {
         font-size: 17px;
       }
 
@@ -830,7 +980,8 @@
       }
 
       .section,
-      .hero-card {
+      .hero-card,
+      .opener-card {
         box-shadow: none;
         border: 1px solid #ccc;
       }
@@ -863,6 +1014,90 @@
   </header>
 
   <div class="shell">
+    <section class="opener">
+      <div class="opener-card">
+        <div class="opener-head">
+          <div class="opener-copy">
+            <div class="eyebrow">Neuer Opener für den Einstieg</div>
+            <h1>Warum wir uns jetzt damit befassen müssen</h1>
+            <p>
+              Produktsuche und Kaufvorbereitung verschieben sich in KI-Antworten.
+              Sichtbarkeit entsteht damit nicht mehr erst beim Klick auf eine Website,
+              sondern bereits in der Antwort selbst.
+            </p>
+          </div>
+          <article class="opener-mini">
+            <h2>Die einfache Management-Logik</h2>
+            <p>
+              Erst die Plattformrealität. Dann die Implikation für Sichtbarkeit.
+              Danach die konkrete Frage: Wo steht Zwiesel in einer typischen
+              Produktabfrage heute?
+            </p>
+          </article>
+        </div>
+
+        <div class="opener-hook">
+          Die Frage ist nicht mehr nur: "Ranken wir?" Die wichtigere Frage wird:
+          "Werden wir in KI-Antworten überhaupt empfohlen?"
+        </div>
+
+        <div class="opener-grid">
+          <article class="opener-stat">
+            <div class="label">Google</div>
+            <div class="opener-stat-value">2 Mrd.</div>
+            <h3>monatliche Nutzer von Google AI Overviews</h3>
+            <p>KI-Antworten sind bereits Teil der globalen Suchrealität.</p>
+          </article>
+          <article class="opener-stat">
+            <div class="label">ChatGPT</div>
+            <div class="opener-stat-value">800 Mio.</div>
+            <h3>aktive Nutzer pro Woche</h3>
+            <p>Generative KI prägt Recherche, Vergleich und Vorauswahl im Alltag.</p>
+          </article>
+          <article class="opener-stat">
+            <div class="label">Commerce</div>
+            <div class="opener-stat-value">58 %</div>
+            <h3>nutzen GenAI statt klassischer Suche für Produktempfehlungen</h3>
+            <p>Gerade im Empfehlungs- und Beratungs-Moment wird KI zur ersten Anlaufstelle.</p>
+          </article>
+        </div>
+
+        <div class="opener-statements">
+          <article class="opener-note good">
+            <h3>KI ist bereits ein Massen-Touchpoint.</h3>
+            <p>Wir sprechen nicht über einen Zukunftstrend, sondern über ein bestehendes Nutzerverhalten.</p>
+          </article>
+          <article class="opener-note warn">
+            <h3>Antworten werden zur neuen Sichtbarkeit.</h3>
+            <p>Wer in der Antwort nicht vorkommt, verliert oft schon vor dem Website-Besuch an Relevanz.</p>
+          </article>
+          <article class="opener-note bad">
+            <h3>Zwiesel ist heute noch nicht stabil verankert.</h3>
+            <p>In unserer Testabfrage erscheint Zwiesel nur in 1 von 3 Antworten und damit nicht konsistent genug.</p>
+          </article>
+        </div>
+
+        <div class="opener-sources">
+          <article class="opener-source">
+            <h3>Zwiesel auf einen Blick</h3>
+            <ul>
+              <li>Testfrage: Empfehlung für ein hochwertiges, aber robustes Weißweinglas für Riesling und Sauvignon Blanc.</li>
+              <li>Ergebnis: Zwiesel wird in 1 von 3 getesteten Modellantworten genannt.</li>
+              <li>Wettbewerber wie Riedel, Zalto, Spiegelau und Gabriel-Glas erscheinen natürlicher und konsistenter.</li>
+            </ul>
+          </article>
+          <article class="opener-source">
+            <h3>Belastbare Quellen</h3>
+            <ul>
+              <li><a href="https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/" target="_blank" rel="noopener noreferrer">Google AI Overviews: 2 Milliarden monatliche Nutzer</a></li>
+              <li><a href="https://techcrunch.com/2025/10/06/sam-altman-says-chatgpt-has-hit-800m-weekly-active-users/" target="_blank" rel="noopener noreferrer">ChatGPT: 800 Millionen aktive Nutzer pro Woche</a></li>
+              <li><a href="https://www.capgemini.com/news/press-releases/71-of-consumers-want-generative-ai-integrated-into-their-shopping-experiences/" target="_blank" rel="noopener noreferrer">Capgemini: 58 Prozent nutzen GenAI für Produkt- und Service-Empfehlungen</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="hero-card">
         <div class="hero-copy">
